@@ -13,6 +13,9 @@ This project is done using ESP01 module with an off-the-shelf WiFi relay for ESP
 Details of hardwares are available below.
 This project helped me to switch on/off all of my old electrical appliances without having to buy alexa enabled new ones in just INR 150/-.
 
+To control the device, simply say to alexa: Alexa, turn on Lamp or Alexa, turn off Lamp.
+Here, "Lamp" is the name assigned to the module/switch. You can change this in the code as you wish. Check the "device_name" variable.
+
 2. esp-boot-controller:
 ----------------------
 This program implements logic to power-on and power-off a desktop CPU motherboard.
@@ -21,6 +24,13 @@ This project is done using ESP01 module with an off-the-shelf WiFi relay for ESP
 Details of hardwares are available below.
 This project helped me to switch on/off my normal Desktops over LAN or anywhere from the world (over personal VPN).
 This is the cheapest method I can say as it enabled me to remotely control my desktops just within INR 150/-.
+
+After the device is connected to WiFi, a webpage to control on/off can be accessed here: http://ip-address:8080
+Or can be controlled through command-line as below:
+To power on  CPU: curl -s -X GET http://ip-address:8080/cpu/on
+To power off CPU: curl -s -X GET http://ip-address:8080/cpu/off
+
+Here, "ip-address" is the IP assigned to ESP wifi module from your WiFi access-point/router.
 
 The Hardwares:
 --------------
