@@ -54,7 +54,7 @@ boolean connect_wifi()
 }
 
 /* callback function for on/off command */
-void command_handler(uint8_t brightness)
+void command_handler(uint8_t val)
 {
 	/* device control */
 	if (is_on == false && val == 0xFF) { /* ON */
@@ -62,7 +62,7 @@ void command_handler(uint8_t brightness)
 		Serial.print(device_name);
 		Serial.println(" ON");
 		is_on = true;
-	} else if (is_on == true && brightness != 0XFF) { /* OFF */
+	} else if (is_on == true && val != 0XFF) { /* OFF */
 		digitalWrite(relay_pin, HIGH);
 		Serial.print(device_name);
 		Serial.println(" OFF");
