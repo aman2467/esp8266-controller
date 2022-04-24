@@ -158,6 +158,7 @@ void loop()
 						} else {
 							client.println("<p><a href=\"/cpu/off\"><button class=\"button button2\">OFF</button></a></p>");
 						}
+						client.println("<p><a href=\"/cpu/reset\"><button>RESET</button></a></p>");
 						client.println("</body></html>");
 
 						/* The HTTP response ends with another blank line */
