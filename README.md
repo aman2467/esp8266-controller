@@ -29,6 +29,7 @@ After the device is connected to WiFi, a webpage to control on/off can be access
 Or can be controlled through command-line as below:
 To power on  CPU: curl -s -X GET http://ip-address:8080/cpu/on
 To power off CPU: curl -s -X GET http://ip-address:8080/cpu/off
+To reset CPU state: curl -s -X GET http://ip-address:8080/cpu/reset
 
 Here, "ip-address" is the IP assigned to ESP wifi module from your WiFi access-point/router.
 

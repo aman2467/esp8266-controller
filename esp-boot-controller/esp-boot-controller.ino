@@ -127,6 +127,13 @@ void loop()
 							/* print on console */
 							Serial.println("CPU is OFF");
 							cpustate = "OFF";
+						} else if (header.indexOf("GET /cpu/reset") >= 0) {
+							/* indicate by GPIO-2 that CPU is OFF */
+							digitalWrite(gpio2, HIGH);
+
+							/* print on console */
+							Serial.println("CPUSTATE is now in RESET mode");
+							cpustate = "OFF";
 						}
 
 						/* display the HTML web page */
